@@ -2,7 +2,7 @@ import { ProxyState } from "../AppState.js"
 import { carsService } from "../Services/CarsService.js"
 
 function _drawCars() {
-  console.log(5)
+  // console.log(5)
   let cars = ProxyState.cars
   let template = ''
   cars.forEach(car => {
@@ -20,7 +20,7 @@ export default class CarsController {
     this.getCars()
   }
 
-  getCars(){
+  getCars() {
     try {
       carsService.getCars()
     } catch (error) {
@@ -30,7 +30,7 @@ export default class CarsController {
 
   createCar() {
     window.event.preventDefault()
-    console.log("creating car", 1)
+    // console.log("creating car", 1)
     let form = window.event.target
     let newCar = {
       make: form['make'].value,
@@ -42,7 +42,7 @@ export default class CarsController {
     }
     try {
       carsService.createCar(newCar)
-      
+
     } catch (error) {
       console.error(error)
     }
@@ -64,7 +64,7 @@ export default class CarsController {
     }
   }
 
-  bid(id, price){
+  bid(id, price) {
     try {
       console.log(id, price)
       carsService.bid(id, price)
@@ -73,7 +73,7 @@ export default class CarsController {
     }
   }
 
-  getOne(){
+  getOne() {
     let id = ProxyState.cars[0].id
     carsService.getOne(id)
   }
