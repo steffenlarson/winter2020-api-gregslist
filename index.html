@@ -21,42 +21,45 @@
         </nav>
     </header>
     <main class="container">
-        <div class="row mt-2">
-            <div class="col text-right">
-                <!-- Button trigger modal -->
-                <button type="button" class="btn btn-outline-primary" data-toggle="modal"
-                    data-target="#new-car-modal">+</button>
-                <!-- Modal -->
-                <div class="modal fade" id="new-car-modal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
-                    aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title">NEW CAR FORM</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <form onsubmit="app.carsController.createCar()">
-                                    <input type="text" id="make" placeholder="make" required>
-                                    <input type="text" id="model" placeholder="model" required>
-                                    <input type="number" id="year" placeholder="year" required min="1885" value="2020">
-                                    <input type="number" id="price" placeholder="price" required min="1">
-                                    <input type="text" id="description" placeholder="description">
-                                    <input type="text" id="imgUrl" placeholder="Image Url">
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary"
-                                            data-dismiss="modal">Close</button>
-                                        <button type="submit" class="btn btn-primary">Save</button>
-                                    </div>
-                                </form>
+        <section class="cars-section">
+            <div class="row mt-2">
+                <div class="col text-right">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-outline-primary" data-toggle="modal"
+                        data-target="#new-car-modal">+</button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="new-car-modal" tabindex="-1" role="dialog"
+                        aria-labelledby="modelTitleId" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">NEW CAR FORM</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form onsubmit="app.carsController.createCar()">
+                                        <input type="text" id="make" placeholder="make" required>
+                                        <input type="text" id="model" placeholder="model" required>
+                                        <input type="number" id="year" placeholder="year" required min="1885"
+                                            value="2020">
+                                        <input type="number" id="price" placeholder="price" required min="1">
+                                        <input type="text" id="description" placeholder="description">
+                                        <input type="text" id="imgUrl" placeholder="Image Url">
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-primary">Save</button>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
         <div class="row" id="cars">
         </div>
     </main>

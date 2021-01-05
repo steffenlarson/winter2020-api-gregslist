@@ -30,5 +30,27 @@ class JobsService {
 
   }
 
+  async bid(id, newPrice) {
+    let jobData = { price: newPrice }
+    let res = await api.put("jobs/" + id, jobData)
+    console.log(res)
+    let oldJobIndex = ProxyState.jobs.findIndex(j => j.id == id)
 
+    let temp = ProxyState.jobs
+    temp.splice(oldJobIndex, 1, new Job(res.data))
+    ProxyState.jobs = temp
+
+    // this.getJobs()
+
+  }
+
+
+
+  async getOne(id) {
+
+    let res = await api.get("jobs/" + id)
+    console.log(res)
+  }
 }
+
+export const jobsService = new JobsService

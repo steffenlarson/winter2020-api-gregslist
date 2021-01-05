@@ -22,7 +22,7 @@ export default class JobsController {
 
   getJobs() {
     try {
-      JobsService.getJobs()
+      jobsService.getJobs()
     } catch (error) {
       console.error(error)
     }
@@ -41,7 +41,7 @@ export default class JobsController {
     }
 
     try {
-      JobsService.createJob(newJob)
+      jobsService.createJob(newJob)
 
     } catch (error) {
       console.error(error)
